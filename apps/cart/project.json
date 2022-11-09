@@ -5,35 +5,11 @@
   "generators": {},
   "targets": {
     "build": {
-      "executor": "@nrwl/webpack:webpack",
+      "executor": "@nrwl/vite:build",
       "options": {
+        "uiFramework": "react",
         "outputPath": "dist/apps/cart",
-        "webpackConfig": "@nrwl/react/plugins/webpack",
-        "index": "apps/cart/src/index.html",
-        "main": "apps/cart/src/main.tsx",
-        "polyfills": "apps/cart/src/polyfills.ts",
-        "tsConfig": "apps/cart/tsconfig.app.json",
-        "assets": [
-          "apps/cart/src/_redirects",
-          {
-            "input": "libs/shared/assets/src/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "libs/shared/assets/src",
-            "glob": "favicon.ico",
-            "output": ""
-          }
-        ],
-        "maxWorkers": 8,
-        "styles": [
-          "libs/shared/styles/src/index.scss",
-          "libs/shared/header/index.scss",
-          "node_modules/normalize.css/normalize.css"
-        ],
-        "scripts": [],
-        "buildLibsFromSource": true
+        "baseHref": "/"
       },
       "configurations": {
         "production": {
@@ -69,9 +45,11 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@nrwl/webpack:dev-server",
+      "executor": "@nrwl/vite:dev-server",
       "options": {
-        "buildTarget": "cart:build"
+        "uiFramework": "react",
+        "outputPath": "dist/apps/cart",
+        "baseHref": "/"
       },
       "configurations": {
         "production": {
