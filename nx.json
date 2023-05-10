@@ -17,7 +17,7 @@
     "warnings": {
       "versionMismatch": false
     },
-    "packageManager": "pnpm",
+    "packageManager": "yarn",
     "analytics": false
   },
   "generators": {
